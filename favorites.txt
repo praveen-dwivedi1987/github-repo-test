@@ -3,6 +3,7 @@ Fav foods
 Pizza
 burger
 jalebi
+samosha
 
 Fav Movies
 ++++++++++++++
