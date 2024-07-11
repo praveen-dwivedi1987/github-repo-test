@@ -18,9 +18,34 @@ pipeline {
             steps {
                 sh '''
                 echo "this is running from foods branch"
+                cat favorites.txt
                 '''
             }
         }
-    }
+
+        stage('movie'){
+            when {
+                branch comparator: 'EQUALS', pattern: 'movies'
+            }
+            steps {
+                sh '''
+                echo "this is running from Movies branch"
+                cat favorites.txt
+                '''
+            }
+        }
+
+        stage('main'){
+            when {
+                branch comparator: 'EQUALS', pattern: 'movies'
+            }
+            steps {
+                sh '''
+                echo "this is running from main branch"
+                cat favorites.txt
+                '''
+            }
+        }
+
   
 }
